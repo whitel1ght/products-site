@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FDA Recalls Monitor - Food, Drug and Device Recalls as JSON (Apify Actor)</title>
+<meta name="description" content="Apify actor that returns FDA food, drug and device recalls from openFDA as clean JSON, with filters and an only-new monitoring mode.">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header><nav><a href="../index.html">All products</a></nav></header>
+<main>
+<h1>FDA Recalls Monitor</h1>
+<p class="lead">FDA food, drug and medical device recalls from the official openFDA enforcement API, as clean, normalized JSON.</p>
+<!-- TODO(owner): replace href with the Apify Store page URL once published -->
+<p><a class="btn" href="https://apify.com/YOUR_APIFY_USERNAME/fda-recalls-monitor">Open on Apify Store</a></p>
+<h2>What it does</h2>
+<ul>
+<li>Searches food, drug and device recalls, one category or all.</li>
+<li>Filters by keyword, recalling firm, class (I, II, III), status, state, country and date range.</li>
+<li>"Only new" mode with a Monitor ID: each scheduled run returns only recalls you have not received before.</li>
+<li>Handles large pulls with automatic pagination and date-window splitting.</li>
+<li>Retries failed requests with backoff. An optional openFDA API key raises rate limits.</li>
+</ul>
+<h2>Use cases</h2>
+<ul>
+<li><strong>Compliance:</strong> run weekly for Class I recalls and send new items to Slack or email through an Apify integration.</li>
+<li><strong>Supply chain:</strong> watch specific suppliers or keywords such as "undeclared peanut" or "listeria".</li>
+<li><strong>QA and regulatory affairs:</strong> pull device recalls for a date range into a spreadsheet.</li>
+<li><strong>AI agents:</strong> call the actor through Apify's MCP server to answer recall questions with an FDA source link.</li>
+<li><strong>Retail and marketplaces:</strong> screen a product catalog against recalls.</li>
+</ul>
+<h2>Example output</h2>
+<p class="small">Illustrative record; field names match the actor output, values are sample data.</p>
+<pre>{
+  "recallNumber": "F-0276-2017",
+  "category": "food",
+  "classification": "Class II",
+  "status": "Terminated",
+  "reportDate": "2016-11-02",
+  "recallInitiationDate": "2016-08-08",
+  "recallingFirm": "Pharmatech LLC",
+  "productDescription": "CytoDetox, Hydrolyzed Clinoptilolite Fragments, 1 oz./30 mL.",
+  "reasonForRecall": "Potential contamination with Burkholderia cepacia.",
+  "codeInfo": "UPC No. 632687615989; Lot No. 30661601",
+  "distributionPattern": "FL, MI, MS, and OH.",
+  "quantity": "1,990 bottles",
+  "city": "Davie",
+  "state": "FL",
+  "country": "United States",
+  "voluntaryMandated": "Voluntary: Firm initiated",
+  "eventId": "75272",
+  "sourceUrl": "https://www.accessdata.fda.gov/scripts/ires/index.cfm?Event=75272"
+}</pre>
+<h2>Pricing</h2>
+<p>Pay per event on Apify: a small charge per run and per result. See the Apify Store page for current prices.</p>
+<h2>Data and privacy</h2>
+<p>Data comes from openFDA and reflects FDA's Enforcement Report, so it can lag real-world announcements. The actor sends your filters (and optional openFDA API key) only to api.fda.gov. In "only new" mode it stores already-delivered recall numbers in a key-value store in your own Apify account. No tracking or third-party services.</p>
+<p class="small">Not affiliated with or endorsed by the FDA. Not a substitute for official notices; do not use for medical decisions. Verify against the FDA source link.</p>
+</main>
+<footer>Independent products. No analytics or trackers on this site.</footer>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI Chat Exporter Privacy Policy</title>
+<meta name="description" content="Privacy policy for the AI Chat Exporter Chrome extension.">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header><nav><a href="../index.html">All products</a></nav></header>
+<main>
+<h1>AI Chat Exporter privacy policy</h1>
+<p>Effective date: 2026-09-29</p>
+<p>AI Chat Exporter is not affiliated with OpenAI or Anthropic. It does not collect, sell or share your conversations or browsing data, and contains no analytics, telemetry or ads.</p>
+<h2>Conversation content</h2>
+<p>When you click Export on chatgpt.com or claude.ai, the extension reads the visible conversation from the page and converts it to a file in your browser. The conversation is not sent to the developer or to any third party. For PDF export, the content is handed to an extension page through <code>chrome.storage.session</code> (in memory, cleared when the browser closes) and removed as soon as that page reads it.</p>
+<h2>Data stored on your device</h2>
+<ul>
+<li>A cached flag saying whether Pro is unlocked (<code>chrome.storage.local</code>).</li>
+<li>ExtensionPay's anonymous key and cached account status, kept by its library in extension storage (<code>chrome.storage.sync</code> where available, so Chrome may sync it across your signed-in browsers).</li>
+</ul>
+<p>Exported files are saved through your browser's normal download; the extension does not keep a copy.</p>
+<h2>Network requests and ExtensionPay</h2>
+<p>The only network requests the extension makes are to ExtensionPay (extensionpay.com) to check payment status. ExtensionPay receives an anonymous install key and, if you pay or log in, your email address and payment status. Payments are processed by Stripe through ExtensionPay; the extension never sees card details. No conversation content is included. The extension also runs a content script on extensionpay.com pages so it learns when you have paid; it reads only payment status there. See <a href="https://extensionpay.com/privacy">ExtensionPay's privacy policy</a>.</p>
+<h2>Permissions</h2>
+<ul>
+<li><code>storage</code>: Pro status cache, ExtensionPay key, print hand-off.</li>
+<li>Access to <code>chatgpt.com</code> and <code>claude.ai</code>: to show the Export button and read the conversation you export.</li>
+<li>Access to <code>extensionpay.com</code>: to receive payment status.</li>
+</ul>
+<h2>Changes</h2>
+<p>If this policy changes, the effective date above will be updated.</p>
+<h2>Contact</h2>
+<!-- TODO(owner): replace with your real contact email -->
+<p>Contact: <a href="mailto:YOUR_EMAIL@example.com">YOUR_EMAIL@example.com</a></p>
+</main>
+<footer>Independent products. No analytics or trackers on this site.</footer>
+</body>
+</html>
