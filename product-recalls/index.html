@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Product Recalls API - CPSC, NHTSA, USDA FSIS, EU Safety Gate, UK FSA in one JSON schema</title>
+<meta name="description" content="Apify actor that returns product recalls from CPSC, NHTSA, USDA FSIS, EU Safety Gate, and UK FSA as unified JSON, with filters and monitoring mode.">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header><nav><a href="../index.html">All products</a></nav></header>
+<main>
+<h1>Product Recalls API</h1>
+<p class="lead">CPSC, NHTSA, USDA FSIS, EU Safety Gate, and UK FSA product recalls in one unified JSON schema.</p>
+<p><a class="btn" href="https://apify.com/whitel1ght/unified-product-recalls">Open in Apify Store</a></p>
+<h2>Who it's for</h2>
+<ul>
+<li><strong>E-commerce and FBA sellers:</strong> screen your catalog against multi-source recalls in real time.</li>
+<li><strong>Retailers:</strong> monitor shelves across regions and agencies with a single API.</li>
+<li><strong>Insurers and compliance teams:</strong> track and report product liability risks.</li>
+<li><strong>AI agents:</strong> call through Apify's MCP server to answer recall questions with authoritative source links.</li>
+</ul>
+<h2>What it does</h2>
+<ul>
+<li>Aggregates recalls from 5 official sources: CPSC, NHTSA, USDA FSIS, EU Safety Gate, UK FSA.</li>
+<li>Returns a unified JSON schema across all agencies and regions.</li>
+<li>"Only new" mode with a Monitor ID: each scheduled run returns only recalls you have not received before.</li>
+<li>Supports API calls via Apify CLI or HTTP, and MCP integration for AI agents.</li>
+<li>Filterable by source, country, category, company, and date range.</li>
+</ul>
+<h2>Example output</h2>
+<p class="small">Illustrative record; field names match the actor output, values are sample data.</p>
+<pre>{
+  "id": "recall_20240315_001",
+  "source": "CPSC",
+  "agency": "US Consumer Product Safety Commission",
+  "country": "US",
+  "category": "electronics",
+  "title": "Lithium Battery Fire Hazard Recall",
+  "productDescription": "Model XYZ Smart Speaker with integrated battery, UPC 123456789012",
+  "hazard": "Battery may overheat and catch fire.",
+  "riskLevel": "high",
+  "company": "ElectroTech Inc.",
+  "brands": ["EchoPlus", "SmartHome Pro"],
+  "date": "2024-03-15",
+  "url": "https://www.cpsc.gov/recall/123456"
+}</pre>
+<h2>Pricing</h2>
+<p>$5 per 1,000 recalls plus Apify's standard start fee. See the Apify Store page for current rates.</p>
+<h2>Data and privacy</h2>
+<p>Data comes from official government agencies and sources: US CPSC, NHTSA, USDA FSIS, EU Safety Gate, and UK FSA. The actor sends your filters only to the respective agency APIs. In "only new" mode it stores already-delivered recall IDs in a key-value store in your own Apify account. No tracking or third-party services.</p>
+<p class="small">Not affiliated with any government agency. Data from official public sources; see the Store page for licences and attribution.</p>
+</main>
+<footer>Independent products. No analytics or trackers on this site. <a href="../support.html">&#9749; Support development</a></footer>
+</body>
+</html>
