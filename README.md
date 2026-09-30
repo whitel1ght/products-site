@@ -47,4 +47,4 @@ Preview locally: `python3 -m http.server` in this folder, then open http://local
 - Each Chrome Web Store listing's Homepage URL (optional): the product landing page.
 - Support link: both extensions open `.../support.html`; fill in the `TODO(owner)` payment placeholders there first.
 - Apify Store: the actor does not need a privacy policy URL; the landing page can be used as the website link.
-- Both extensions have a `TODO(owner)` privacy URL in `src/config.ts`; replace `YOUR_GITHUB_USERNAME` with your username and rebuild.
+- Both extensions have a `TODO(owner)` privacy URL in `src/config.ts`; replace `YOUR_GITHUB_USERNAME` with `whitel1ght` and rebuild.
