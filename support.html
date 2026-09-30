@@ -17,8 +17,27 @@
 <h2>Ways to donate</h2>
 <!-- TODO(owner): replace href with your card-payment link (a hosted donation or payment-link page that works from your country) -->
 <!-- TODO(owner): fill in your real details; never publish anything you are not comfortable making public -->
-<p>Donation options are being set up. If you'd like to support development now, email <a href="mailto:work.whitelight@gmail.com">work.whitelight@gmail.com</a>. Thank you!</p>
+<h3>Donate with USDT (TRON / TRC20)</h3>
+<img src="usdt-trc20-qr.svg" alt="QR code for USDT TRC20 address" width="200" height="200">
+<p>
+  <code id="usdt-addr">TGcLbobe16k57q3j8sjT4pWywk96LMaXNT</code>
+  <button onclick="copyAddress()">Copy address</button>
+</p>
+<p><strong>Send only USDT on the TRON (TRC20) network. Tokens sent on other networks (Ethereum, BNB Chain, TON…) will be lost.</strong></p>
+<p><strong>Donations are voluntary and don't unlock any features.</strong> Everything works exactly the same whether or not you donate, and there is no account, tracking or follow-up email.</p>
+<p>Thank you! Questions: <a href="mailto:work.whitelight@gmail.com">work.whitelight@gmail.com</a></p>
 <p class="small">The extensions never handle payments and never see any payment details. This page is the only place donations are mentioned.</p>
+<script>
+function copyAddress() {
+  const addr = document.getElementById('usdt-addr').textContent;
+  navigator.clipboard.writeText(addr).then(() => {
+    const btn = event.target;
+    const originalText = btn.textContent;
+    btn.textContent = 'Copied!';
+    setTimeout(() => { btn.textContent = originalText; }, 2000);
+  }).catch(err => console.error('Failed to copy:', err));
+}
+</script>
 </main>
 <footer>Independent products. No analytics or trackers on this site.</footer>
 </body>
