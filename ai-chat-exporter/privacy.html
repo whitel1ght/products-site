@@ -17,17 +17,15 @@
 <p>When you click Export on chatgpt.com or claude.ai, the extension reads the visible conversation from the page and converts it to a file in your browser. The conversation is not sent to the developer or to any third party. For PDF export, the content is handed to an extension page through <code>chrome.storage.session</code> (in memory, cleared when the browser closes) and removed as soon as that page reads it.</p>
 <h2>Data stored on your device</h2>
 <ul>
-<li>A cached flag saying whether Pro is unlocked (<code>chrome.storage.local</code>).</li>
-<li>ExtensionPay's anonymous key and cached account status, kept by its library in extension storage (<code>chrome.storage.sync</code> where available, so Chrome may sync it across your signed-in browsers).</li>
+<li>A counter of successful exports and a flag recording whether a one-time thank-you message was shown (<code>chrome.storage.local</code>). It never leaves your device.</li>
 </ul>
 <p>Exported files are saved through your browser's normal download; the extension does not keep a copy.</p>
-<h2>Network requests and ExtensionPay</h2>
-<p>The only network requests the extension makes are to ExtensionPay (extensionpay.com) to check payment status. ExtensionPay receives an anonymous install key and, if you pay or log in, your email address and payment status. Payments are processed by Stripe through ExtensionPay; the extension never sees card details. No conversation content is included. The extension also runs a content script on extensionpay.com pages so it learns when you have paid; it reads only payment status there. See <a href="https://extensionpay.com/privacy">ExtensionPay's privacy policy</a>.</p>
+<h2>Network requests and payments</h2>
+<p>The extension makes no network requests. It is free and processes no payment data. The optional "Support development" link simply opens a page of this website in a new tab.</p>
 <h2>Permissions</h2>
 <ul>
-<li><code>storage</code>: Pro status cache, ExtensionPay key, print hand-off.</li>
+<li><code>storage</code>: print hand-off and the local export counter.</li>
 <li>Access to <code>chatgpt.com</code> and <code>claude.ai</code>: to show the Export button and read the conversation you export.</li>
-<li>Access to <code>extensionpay.com</code>: to receive payment status.</li>
 </ul>
 <h2>Changes</h2>
 <p>If this policy changes, the effective date above will be updated.</p>
